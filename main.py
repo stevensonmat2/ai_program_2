@@ -132,7 +132,7 @@ class Simulation:
 
     def select_pair(self):
         weights = [
-            self.population[index].fitness_score
+            (self.population[index].fitness_score / MAX_FITNESS)
             for index, _ in enumerate(self.population)
         ]
         selected_pair = random.choices(self.population, weights=weights, k=2)
